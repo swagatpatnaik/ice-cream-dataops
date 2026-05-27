@@ -213,7 +213,7 @@ modules:
   - name: oee
     location:
       path: modules/bootcamp/use_cases/oee
-      hash: bb5ed277
+      hash: 8ce5fbe2
     build_variables:
     - key: icapi_ds_external_id
       value: ds_icapi
@@ -266,6 +266,6 @@ modules:
           path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/auth/data_pipeline_oee.Group.yaml
           hash: 72a2e5c1
         kind: Group
-    warning_count: 0
+    warning_count: 1
     status: Success
     iteration: 1
