@@ -1,4 +1,4 @@
-name: data_developer
+name: oee_usecase
 sourceId: {{ data_pipeline_oee_source_id }}
 capabilities:
   - datasetsAcl:
