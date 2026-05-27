@@ -2,34 +2,6 @@
 modules:
   version: 0.6.53
   modules:
-  - name: data_foundation
-    location:
-      path: modules/bootcamp/data_foundation
-      hash: f9d0ccb1
-    build_variables:
-    - key: icapi_ds_external_id
-      value: ds_icapi
-      is_selected: true
-      location: modules/bootcamp
-    - key: icapi_space_name
-      value: icapi_dm_space
-      is_selected: true
-      location: modules/bootcamp
-    - key: data_developer_source_id
-      value: ${DATA_DEVELOPER_SOURCE_ID}
-      is_selected: true
-      location: modules/bootcamp/data_foundation
-    resources:
-      auth:
-      - identifier:
-          name: data_developer
-        source:
-          path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation/auth/data_developer.Group.yaml
-          hash: 51c4d4a4
-        kind: Group
-    warning_count: 0
-    status: Success
-    iteration: 1
   - name: ice_cream_api
     location:
       path: modules/bootcamp/ice_cream_api
@@ -210,10 +182,38 @@ modules:
     warning_count: 2
     status: Success
     iteration: 1
+  - name: data_foundation
+    location:
+      path: modules/bootcamp/data_foundation
+      hash: f9d0ccb1
+    build_variables:
+    - key: icapi_ds_external_id
+      value: ds_icapi
+      is_selected: true
+      location: modules/bootcamp
+    - key: icapi_space_name
+      value: icapi_dm_space
+      is_selected: true
+      location: modules/bootcamp
+    - key: data_developer_source_id
+      value: ${DATA_DEVELOPER_SOURCE_ID}
+      is_selected: true
+      location: modules/bootcamp/data_foundation
+    resources:
+      auth:
+      - identifier:
+          name: data_developer
+        source:
+          path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/data_foundation/auth/data_developer.Group.yaml
+          hash: 51c4d4a4
+        kind: Group
+    warning_count: 0
+    status: Success
+    iteration: 1
   - name: oee
     location:
       path: modules/bootcamp/use_cases/oee
-      hash: 8ce5fbe2
+      hash: a87c9060
     build_variables:
     - key: icapi_ds_external_id
       value: ds_icapi
@@ -258,7 +258,13 @@ modules:
           path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/data_models/oee_timeseries.space.yaml
           hash: 4424ed7c
         kind: Space
-      functions: []
+      functions:
+      - identifier:
+          externalId: oee_timeseries
+        source:
+          path: /workspaces/ice-cream-dataops/ice-cream-dataops/modules/bootcamp/use_cases/oee/functions/functions.Function.yaml
+          hash: b4795e39
+        kind: Function
       auth:
       - identifier:
           name: oee_usecase
